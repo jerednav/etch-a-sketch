@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.pixel-container {
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  margin: 1em auto;
+  box-shadow: 3px 3px 10px rgb(138, 138, 138);
+  display: grid;
+  user-select: none;
+}
+
+.pixel {
+  border: 1px solid #333;
+}
