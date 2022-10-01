@@ -1,5 +1,6 @@
 let size = 16;
 let color = "#333333";
+let click = true;
 
 let pixelContainer = document.querySelector(".pixel-container");
 
@@ -13,6 +14,20 @@ function setPixelContainer(size) {
     const pixelDiv = document.createElement("div");
     pixelDiv.classList.add("pixel");
     pixelContainer.appendChild(pixelDiv);
+
+    pixelDiv.addEventListener("mouseover", colorPixel);
+  }
+}
+
+function colorPixel() {
+  this.style.backgroundColor = color;
+}
+
+function changeSize(amount) {
+  if (input >= 2 && input > 100) {
+    document.querySelector(".error").style.display = "flex";
+  } else {
+    document.querySelector(".none").style.display = "none";
   }
 }
 

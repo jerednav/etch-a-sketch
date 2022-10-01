@@ -16,6 +16,10 @@
   user-select: none;
 }
 
+black-pixel-container {
+  background-color: #000;
+}
+
 .pixel {
   border: 1px solid #333;
 }
