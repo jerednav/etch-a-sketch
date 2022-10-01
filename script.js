@@ -1,4 +1,4 @@
-let size = 16;
+let default_size = 16;
 let color = "#333333";
 let click = true;
 
@@ -19,18 +19,26 @@ function setPixelContainer(size) {
   }
 }
 
+//color the pixel/square
 function colorPixel() {
   this.style.backgroundColor = color;
 }
 
-function changeSize(amount) {
-  if (input >= 2 && input > 100) {
-    document.querySelector(".error").style.display = "flex";
+let button = document.querySelector(".buttonAlert");
+button.addEventListener("click", () => {
+  let size = prompt("What size would you like?");
+  changeSize(size);
+});
+
+//changes size of grid, no less than 2 and no greater than 100
+function changeSize(size) {
+  if (size >= 2 && size > 100) {
+    alert("Pick something between 2 and 100");
   } else {
-    document.querySelector(".none").style.display = "none";
+    setPixelContainer(size);
   }
 }
 
 window.onload = () => {
-  setPixelContainer(size);
+  setPixelContainer(default_size);
 };
